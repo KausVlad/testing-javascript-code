@@ -5,8 +5,6 @@ const body = document.querySelector('body');
 const personalPhoto = document.querySelector('.personal-photo');
 
 toggle.addEventListener('change', function () {
-  console.log(toggle.checked);
-
   if (toggle.checked) {
     body.classList.add('my-theme');
     body.classList.remove('main-theme');
@@ -16,15 +14,16 @@ toggle.addEventListener('change', function () {
   }
 });
 
-personalPhoto.addEventListener('click', function () {
+function toggleImg() {
   personalPhoto.classList.toggle('personal-photo-hover');
-});
+}
+personalPhoto.addEventListener('click', toggleImg);
 
 function idWarpPage(button) {
   document.getElementById(button).scrollIntoView({ behavior: 'smooth' });
 }
 
-document.addEventListener('keydown', function (e) {
+function checkWarp(e) {
   if (e.code === 'KeyA') {
     idWarpPage('KeyA');
   } else if (e.code === 'KeyB') {
@@ -34,4 +33,6 @@ document.addEventListener('keydown', function (e) {
   } else if (e.code === 'KeyD') {
     idWarpPage('KeyD');
   }
-});
+}
+
+document.addEventListener('keydown', checkWarp);

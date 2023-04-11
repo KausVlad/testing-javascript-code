@@ -1,6 +1,6 @@
 'use strict';
 
-let defaultNumber = +prompt('enter a number');
+// let defaultNumber = +prompt('enter a number');
 console.log(defaultNumber);
 
 function Accumulator(number) {
