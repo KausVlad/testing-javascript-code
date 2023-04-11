@@ -38,21 +38,22 @@ describe('Only number array', () => {
   const desc = '<p>This is a test of only number array on output</p>';
   describe(desc, () => {
     it("should return only number in array ['sh', '62', 'glek', 64, -7, undefined, 4, 'grek', true, 84, 42, 0.1]", () => {
-      const result = onlyNumberArray([
-        'sh',
-        '62',
-        'glek',
-        64,
-        -7,
-        undefined,
-        4,
-        'grek',
-        true,
-        84,
-        42,
-        0.1,
-      ]);
-      expect(result).toEqual([62, 64, -7, 4, 84, 42, 0.1]);
+      expect(
+        onlyNumberArray([
+          'sh',
+          '62',
+          'glek',
+          64,
+          -7,
+          undefined,
+          4,
+          'grek',
+          true,
+          84,
+          42,
+          0.1,
+        ])
+      ).toEqual([62, 64, -7, 4, 84, 42, 0.1]);
     });
     it('should return an empty array if the input array is empty', () => {
       expect(onlyNumberArray([])).toEqual([]);
